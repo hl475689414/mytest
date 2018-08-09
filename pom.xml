@@ -1,0 +1,93 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.xqy.project.business</groupId>
+		<artifactId>xqy-jiajiao</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>xqy-jiajiao-weixin-api</artifactId>
+	<description>学求易-微信公众号API服务</description>
+
+	<dependencies>
+		<!-- 依赖基础框架包-基础WEB层 start -->
+		<dependency>
+			<groupId>com.xqy.project.base</groupId>
+			<artifactId>xqy-base-web</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- 依赖基础框架包-基础WEB层 end -->
+
+		<!-- 内部依赖-调试工具组件 start -->
+		<dependency>
+			<groupId>com.xqy.project.base</groupId>
+			<artifactId>xqy-base-debugging-tool</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- 内部依赖-调试工具组件 end -->
+
+		<!-- JFinal-weixin相关依赖 start -->
+		<dependency>
+			<groupId>com.jfinal</groupId>
+			<artifactId>jfinal-weixin</artifactId>
+			<version>1.9</version>
+		</dependency>
+		<!-- JFinal-weixin相关依赖 end -->
+
+		<!-- 内部组件依赖-finance数据库操作组件 start -->
+		<dependency>
+			<groupId>com.xqy.project.business</groupId>
+			<artifactId>xqy-jiajiao-dao-finance</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<!-- 内部组件依赖-finance数据库操作组件 end -->
+
+		<!-- ActiveMQ基础组件依赖 start -->
+		<dependency>
+			<groupId>com.xqy.project.base</groupId>
+			<artifactId>xqy-base-mq-activemq</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- ActiveMQ基础组件依赖 end -->
+
+		<!-- 网关服务公共依赖包 start -->
+		<dependency>
+			<groupId>com.xqy.project.business</groupId>
+			<artifactId>xqy-gateway-commons</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- 网关服务公共依赖包 end -->
+		
+		<!-- 依赖基础框架-缓存基础包 start -->
+		<dependency>
+			<groupId>com.xqy.project.base</groupId>
+			<artifactId>xqy-base-cache-redis</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- 依赖基础框架-缓存基础包 end -->
+		
+		<!-- 内部组件依赖-公共逻辑组件 start -->
+		<dependency>
+			<groupId>com.xqy.project.business</groupId>
+			<artifactId>xqy-jiajiao-commons</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<!-- 内部组件依赖-公共逻辑组件 end -->
+
+	</dependencies>
+
+	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<!--fork : 如果没有该项配置，肯呢个devtools不会起作用，即应用不会restart -->
+					<fork>true</fork>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
